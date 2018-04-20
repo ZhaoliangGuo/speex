@@ -1,2 +1,2 @@
 # speex
-demos using speex
+Some demes using speex.

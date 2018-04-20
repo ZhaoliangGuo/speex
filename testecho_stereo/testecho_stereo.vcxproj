@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9FD6B0B3-2668-4F23-8587-969ABAB8499A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>testecho_v2</RootNamespace>
+    <ProjectName>testecho_stereo</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;HAVE_CONFIG_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\speexdsp-1.2rc3\include;..\speexdsp-1.2rc3\libspeexdsp</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;HAVE_CONFIG_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\speexdsp-1.2rc3\include;..\speexdsp-1.2rc3\libspeexdsp</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\speexdsp-1.2rc3\libspeexdsp\echo_diagnostic.m" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\arch.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\bfin.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\fftwrap.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\filterbank.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\fixed_arm4.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\fixed_arm5e.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\fixed_bfin.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\fixed_debug.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\fixed_generic.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\kiss_fft.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\kiss_fftr.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\math_approx.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\misc_bfin.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\os_support.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\pseudofloat.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\resample_neon.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\resample_sse.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\smallft.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\stack_alloc.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\vorbis_psy.h" />
+    <ClInclude Include="..\speexdsp-1.2rc3\libspeexdsp\_kiss_fft_guts.h" />
+    <ClInclude Include="include\config.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\speexdsp-1.2rc3\libspeexdsp\buffer.c" />
+    <ClCompile Include="..\speexdsp-1.2rc3\libspeexdsp\fftwrap.c" />
+    <ClCompile Include="..\speexdsp-1.2rc3\libspeexdsp\filterbank.c" />
+    <ClCompile Include="..\speexdsp-1.2rc3\libspeexdsp\jitter.c" />
+    <ClCompile Include="..\speexdsp-1.2rc3\libspeexdsp\kiss_fft.c" />
+    <ClCompile Include="..\speexdsp-1.2rc3\libspeexdsp\kiss_fftr.c" />
+    <ClCompile Include="..\speexdsp-1.2rc3\libspeexdsp\mdf.c" />
+    <ClCompile Include="..\speexdsp-1.2rc3\libspeexdsp\preprocess.c" />
+    <ClCompile Include="..\speexdsp-1.2rc3\libspeexdsp\resample.c" />
+    <ClCompile Include="..\speexdsp-1.2rc3\libspeexdsp\scal.c" />
+    <ClCompile Include="..\speexdsp-1.2rc3\libspeexdsp\smallft.c" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="testecho_stereo.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
